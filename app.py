@@ -185,7 +185,7 @@ def main():
                 (df["Value Date"].dt.month == prev_month)
             )
             df = df.loc[mask].copy()
-)
+            
 
             # ───────────────────────────────────────────────────────────────
             # STEP 4: Create the new 'ref' column based on 'Reference' using map_ref(...)
