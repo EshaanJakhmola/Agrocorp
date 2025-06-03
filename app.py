@@ -168,12 +168,24 @@ def main():
             # ───────────────────────────────────────────────────────────────
             # STEP 3: Filter rows so only those with Value Date in the current month/year remain.
             # ───────────────────────────────────────────────────────────────
-            now = datetime.now()
+            
+
+            # Find the previous calendar month (handling year boundary)
+            today = datetime.now()
+            if today.month == 1:
+                prev_month = 12
+                prev_year = today.year - 1
+            else:
+                prev_month = today.month - 1
+                prev_year = today.year
+            
+            # Apply mask for “Value Date” in (prev_year, prev_month)
             mask = (
-                (df["Value Date"].dt.year  == now.year) &
-                (df["Value Date"].dt.month == now.month)
+                (df["Value Date"].dt.year  == prev_year) &
+                (df["Value Date"].dt.month == prev_month)
             )
             df = df.loc[mask].copy()
+)
 
             # ───────────────────────────────────────────────────────────────
             # STEP 4: Create the new 'ref' column based on 'Reference' using map_ref(...)
