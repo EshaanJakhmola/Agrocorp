@@ -60,8 +60,11 @@ def map_ref(x):
         return "GENERAL"
 
     # 9. CAD anywhere → "CAD"
-    if "CAD" in s:
-        return "CAD"
+    if "CAD-CANADA" in s:
+        return "CAD-CANADA"
+        
+     if "CAD-CANOLA" in s:
+        return "OILSEEDS"
 
     # 10. Entirely numeric → "payments"
     if s.isdigit() and len(s) > 0:
@@ -79,7 +82,7 @@ def map_ref(x):
     if "PAYMENT" in s:
         return "payments"
 
-    if s.startswith("NJ"):
+    if s.startswith("NJ") or s.startswith("NJ-") or s.startswith("NJ ":
         return "NITIN"
 
     # 15. OILSEEDS anywhere → "oilseeds"
