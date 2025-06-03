@@ -68,7 +68,7 @@ def map_ref(x):
         return "payments"
 
     # 11. RB anywhere → "RAHUL"
-    if "RB" in s:
+    if s.startswith("RB"):
         return "RAHUL"
 
     # 12. Starts with B → "NITIN"
@@ -79,9 +79,8 @@ def map_ref(x):
     if "PAYMENT" in s:
         return "payments"
 
-    # 14. NJ anywhere → "NITIN"
-    if "NJ" in s:
-        return "NITIN"
+    if s.startswith("NJ"):
+    return "NITIN"
 
     # 15. OILSEEDS anywhere → "oilseeds"
     if "OILSEEDS" in s:
