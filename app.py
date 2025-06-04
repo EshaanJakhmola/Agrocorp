@@ -28,7 +28,7 @@ def map_ref(x):
     s = str(x).strip().upper()
 
      # 13. PAYMENT anywhere → "payments"
-    if ("PAYMENT" in s) or ("Payment"):
+    if ("PAYMENT" in s) or ("Payment" in s):
         return "payments"
 
     # 1. AUD_PULSES → "AUD Pulses"
