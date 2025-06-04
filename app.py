@@ -82,7 +82,7 @@ def map_ref(x):
     if "PAYMENT" in s:
         return "payments"
 
-    if s.startswith("NJ") or s.startswith("NJ-") or s.startswith("NJ ":
+    if s.startswith("NJ") or s.startswith("NJ-") or s.startswith("NJ "):
         return "NITIN"
 
     # 15. OILSEEDS anywhere → "oilseeds"
