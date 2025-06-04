@@ -63,7 +63,7 @@ def map_ref(x):
     if "CAD-CANADA" in s:
         return "CAD-CANADA"
         
-     if "CAD-CANOLA" in s:
+    if "CAD-CANOLA" in s:
         return "OILSEEDS"
 
     # 10. Entirely numeric → "payments"
