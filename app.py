@@ -93,7 +93,7 @@ def map_ref(x):
     if "WHEAT" in s:
         return "Eur Wheat"
 
-    if "Edible nuts" in s:
+    if "Edible nuts" in s ot "EDIBLE NUTS":
         return "Edible nuts"
 
     # 17. Default: no match → blank
