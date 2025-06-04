@@ -27,6 +27,10 @@ def map_ref(x):
     """
     s = str(x).strip().upper()
 
+     # 13. PAYMENT anywhere → "payments"
+    if ("PAYMENT" in s) or ("Payment"):
+        return "payments"
+
     # 1. AUD_PULSES → "AUD Pulses"
     if ("AUD_PULSES" in s)  and ("PAYMENT" not in s): 
         return "AUD Pulses"
@@ -73,11 +77,7 @@ def map_ref(x):
     # 12. Starts with B → "NITIN"
     if s.startswith("B"):
         return "NITIN"
-
-    # 13. PAYMENT anywhere → "payments"
-    if "PAYMENT" in s:
-        return "payments"
-
+   
     if s.startswith("NJ") or s.startswith("NJ-") or s.startswith("NJ "):
         return "NITIN"
 
