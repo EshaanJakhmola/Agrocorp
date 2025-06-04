@@ -28,15 +28,15 @@ def map_ref(x):
     s = str(x).strip().upper()
 
     # 1. AUD_PULSES → "AUD Pulses"
-    if "AUD_PULSES" in s:
+    if ("AUD_PULSES" in s)  and ("PAYMENT" not in s): 
         return "AUD Pulses"
 
     # 2. INR_PULSES → "INR Pulses"
-    if "INR_PULSES" in s:
+    if ("INR_PULSES" in s)  and ("PAYMENT" not in s):
         return "INR Pulses"
 
     # 3. CAD CANOLA → "OILSEEDS"
-    if "CAD CANOLA" in s:
+    if "CAD CANOLA" in s or "CAD CANALA" in s:
         return "OILSEEDS"
 
     # 4. CAD-CANADA → "CAD CANADA"
@@ -44,16 +44,12 @@ def map_ref(x):
         return "CAD CANADA"
 
     # 5. EUR COTTON → "COTTON"
-    if "EUR COTTON" in s:
+    if ("EUR COTTON") in s and ("PAYMENT" not in s):
         return "COTTON"
 
     # 6. EUR WHEAT → "WHEAT"
-    if "EUR WHEAT" in s:
+    if ("EUR WHEAT" in s) and ("PAYMENT" not in s):
         return "WHEAT"
-
-    # 7. PULSES (but not PAYMENT) → "pulses"
-    if ("PULSES" in s) and ("PAYMENT" not in s):
-        return "pulses"
 
     # 8. SGD anywhere → "GENERAL"
     if ("SGD" in s ) and ("NJ" not in s):
