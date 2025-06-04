@@ -56,7 +56,7 @@ def map_ref(x):
         return "pulses"
 
     # 8. SGD anywhere → "GENERAL"
-    if "SGD" in and ("NJ" not in s):
+    if ("SGD" in s ) and ("NJ" not in s):
         return "GENERAL"
 
     # 9. CAD anywhere → "CAD"
