@@ -90,7 +90,7 @@ def map_ref(x):
         return "Eur Wheat"
 
     if "Edible nuts" in s or "EDIBLE NUTS":
-        return "Edible nuts"
+        return "payments"
 
     # 17. Default: no match → blank
     return ""
