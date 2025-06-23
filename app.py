@@ -31,7 +31,7 @@ def map_ref(x):
     if ("PAYMENT" in s) or ("Payment" in s) 
         return "payments"
     
-    if ("Edible nuts" in s or "EDIBLE NUTS" in s) :
+    if ("Edible nuts" in s) or ("EDIBLE NUTS" in s) :
         return "payments"
         
     # 1. AUD_PULSES → "AUD Pulses"
